@@ -116,10 +116,10 @@ module UploadifyS3Helper
   
   def default_options
     {
-      :button_text => 'Add Video',
-      :file_ext => '*.mov',
+      :button_text => 'Add File',
+      :file_ext => '*.*',
       :file_input_selector => '#file_upload',
-      :file_desc => 'Please choose your .mov movie file'
+      :file_desc => 'Please choose your file'
       }
   end
   

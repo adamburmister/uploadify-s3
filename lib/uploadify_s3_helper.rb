@@ -64,11 +64,11 @@ module UploadifyS3Helper
           {'success_action_status': '201'},
           ['starts-with','$folder',''],
           ['starts-with','$Filename',''],
-          ['starts-with','$content-type',''],
           ['starts-with','$fileext',''],
         ]
       }"
 
+      puts policy_doc
       Base64.encode64(policy_doc).gsub("\n","")
   end
  

@@ -1,7 +1,7 @@
 module UploadifyS3Helper
   
   def javascript_uploadify_s3_tag(options = {})
-    options.merge!(default_options)
+    options = default_options.merge(options)
     javascript_tag( %(
   		$(document).ready(function() {
   			$("#{options[:file_input_selector]}").uploadify({
@@ -37,8 +37,6 @@ module UploadifyS3Helper
   			});
   		});
     ))
-    
-    # <div id="video-upload"><input type="file" name="uploadify" id="uploadify" /></div>		
   end
   
   def uploadify_s3(options = {})

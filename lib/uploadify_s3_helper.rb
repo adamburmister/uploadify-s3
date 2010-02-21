@@ -27,7 +27,7 @@ module UploadifyS3Helper
           'scriptData' 		 : {
              'AWSAccessKeyId': '#{aws_access_key}',
              'key': '#{key}',
-             'acl': '#{acl}",
+             'acl': '#{acl}',
              'policy': '#{s3_policy}',
   					 'success_action_status': '201'',
              'signature': '{s3_signature}',

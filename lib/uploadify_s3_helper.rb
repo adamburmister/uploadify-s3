@@ -7,7 +7,7 @@ module UploadifyS3Helper
   			$("#{options[:file_input_selector]}").uploadify({
   				'fileDataName' : 'file',
   				'uploader'       : '/flash/uploadify/uploadify.swf',
-  				'script'         : "<%= bucket_url %>",
+  				'script'         : '#{bucket_url}',
   				'cancelImg'      : '/images/uploadify/cancel.png',
   				'folder'         : '#{upload_path}',
   				'auto'           : true,
@@ -31,7 +31,7 @@ module UploadifyS3Helper
              'acl': '#{acl}',
              'policy': '#{s3_policy}',
   					 'success_action_status': '201',
-             'signature': '{s3_signature}',
+             'signature': '#{s3_signature}',
         		 'Content-Type': ''
             }        
   			});

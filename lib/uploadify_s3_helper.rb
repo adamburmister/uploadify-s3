@@ -29,7 +29,7 @@ module UploadifyS3Helper
              'key': '#{key}',
              'acl': '#{acl}',
              'policy': '#{s3_policy}',
-  					 'success_action_status': '201'',
+  					 'success_action_status': '201',
              'signature': '{s3_signature}',
         		 'Content-Type': ''
             }        

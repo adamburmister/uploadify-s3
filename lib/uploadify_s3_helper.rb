@@ -18,8 +18,9 @@ module UploadifyS3Helper
   				'fileExt'				 : '#{options[:file_ext]}',
   				'onError' 			 : function (a, b, c, d) {
   					if (d.info == 201) {
-  						$('#VideoGallery').html("<video src='http://genie-images.s3.amazonaws.com/uploads/" + c.name +"' width='350' height='350' controls='yes'></video>");
-  						$('#video-upload').hide();
+  					  var onsucc = (#{options[:on_success]});
+  					  onsucc();
+  						$('#{options[:file_input_selector]}').hide();
   						return false;
   					} else {
   						alert('error '+d.type+": "+d.text);

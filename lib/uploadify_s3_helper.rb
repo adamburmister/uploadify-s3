@@ -19,7 +19,7 @@ module UploadifyS3Helper
   				'onError' 			 : function (a, b, c, d) {
   					if (d.info == 201) {
   					  var onsucc = (#{options[:on_success]});
-  					  onsucc(a, b, c, d);
+  					  onsucc(c);
   						$('#{options[:file_input_selector]}').hide();
   						return false;
   					} else {

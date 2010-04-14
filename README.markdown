@@ -1,0 +1,44 @@
+# Uploadify-S3
+
+This rails plugin allows file uploads directly to Amazon S3 (rather than going through your rails app). Useful for large file uploads/video etc.
+
+This plugin uses the excellent JQuery based uploadify file uploader. More info at http://www.uploadify.com/ 
+                                                                                                                                               
+## Rails Installation (see http://http://github.com/contrast/rails-uploadify-s3 for rails example code)
+
+1. Install the plugin
+<pre>script/plugin install git@github.com:contrast/uploadify-s3.git</pre>
+2. Set your Amazon S3 configuration in `config/amazon_s3.xml`
+3. Ensire a crossdomain.xml file is configured in your Amazon S3 bucket
+4. Use the uploadify_s3 helper method in your view
+                                                                                                                                                             
+e.g
+<pre>
+ <div id="VideoGallery" style="display; none;"></div>
+  <%= uploadify_s3({
+                  :file_input_selector => '#file_uploader',
+                  :button_text => 'Add Video',
+                  :file_ext => '*.mov',
+                  :on_success => "
+                    function(f) {
+                            $('#VideoGallery').html('<video height=\"250\" width=\"250\" src=\"' + f.url + '\" controls=\"true\"></video>');
+                            $('video-upload').hide();
+                    }",
+									:on_error => "function(type, text) {
+										alert("Problem during file upload type: " + type + " text: " + text); 
+									}"}) %>
+               <div id="video-upload"><input type="file" name="uploadify" id="file_uploader" /></div>
+</pre>
+
+** The above example will work in safari (i.e .mov files can be displayed directly in safari)                 
+
+
+## Configuration
+* file_input_selector - The id of the file input
+* button_text - The text for the uploadify button
+* file_ext - The allowed file extensions
+* on_success - A Javascrip callback function on upload complete. A hash of name, size, type and url are passed
+* on_failure - A javascript callback function on upload failure. Error type and text are passed as parameters.
+
+
+Any comments/patches contributions please contact wal@contrast.ie

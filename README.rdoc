@@ -1,7 +1,7 @@
 = Uploadify-S3
 
-This rails plugin allows file uploads directly to Amazon S3 (rather than going through your rails app). Useful for large file uploads/video etc.
-
+This rails plugin allows file uploads directly to Amazon S3 (rather than going through your rails app). Useful for large file uploads/video etc. Especially useful if you use Heroku as your deployment platform.
+                                      
 This plugin uses the excellent JQuery based uploadify file uploader. More info at http://www.uploadify.com/ 
                                                                                                                                                
 == Rails Installation (see http://http://github.com/contrast/rails-uploadify-s3 for rails example code)

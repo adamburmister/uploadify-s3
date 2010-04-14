@@ -13,9 +13,8 @@ This plugin uses the excellent JQuery based uploadify file uploader. More info a
 4. Use the uploadify_s3 helper method in your view
                                                                                                                                                              
 e.g
-<pre>
- <div id="VideoGallery" style="display; none;"></div>
-  <%= uploadify_s3({
+`<div id="VideoGallery" style="display; none;"></div>`
+`  <%= uploadify_s3({
                   :file_input_selector => '#file_uploader',
                   :button_text => 'Add Video',
                   :file_ext => '*.mov',
@@ -27,9 +26,8 @@ e.g
 									:on_error => "function(type, text) {
 										alert("Problem during file upload type: " + type + " text: " + text); 
 									}"}) %>           
-									
-									<input type="file" name="uploadify" id="file_uploader" />
-</pre>
+`									
+`<input type="file" name="uploadify" id="file_uploader" />`
 
 ** This simple example will work in safari (i.e .mov files can be displayed directly in safari). This is not a recommended approach for handling cross browser supported video online.                                                                                                                               
 

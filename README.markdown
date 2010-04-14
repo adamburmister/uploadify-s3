@@ -9,7 +9,7 @@ This plugin uses the excellent JQuery based uploadify file uploader. More info a
 1. Install the plugin
 <pre>script/plugin install git@github.com:contrast/uploadify-s3.git</pre>
 2. Set your Amazon S3 configuration in `config/amazon_s3.xml`
-3. Ensire a crossdomain.xml file is configured in your Amazon S3 bucket
+3. Ensure a crossdomain.xml file is configured in your Amazon S3 bucket
 4. Use the uploadify_s3 helper method in your view
                                                                                                                                                              
 e.g
@@ -26,14 +26,14 @@ e.g
                     }",
 									:on_error => "function(type, text) {
 										alert("Problem during file upload type: " + type + " text: " + text); 
-									}"}) %>
-               <div id="video-upload"><input type="file" name="uploadify" id="file_uploader" /></div>
+									}"}) %>           
+									
+									<input type="file" name="uploadify" id="file_uploader" />
 </pre>
 
-** The above example will work in safari (i.e .mov files can be displayed directly in safari)                 
+** This simple example will work in safari (i.e .mov files can be displayed directly in safari). This is not a recommended approach for handling cross browser supported video online.                                                                                                                               
 
-
-## Configuration
+## uploadify_s3 tag configuration
 * file_input_selector - The id of the file input
 * button_text - The text for the uploadify button
 * file_ext - The allowed file extensions

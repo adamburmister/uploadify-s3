@@ -30,7 +30,7 @@ module UploadifyS3Helper
   						return false;
   					} else {
               var onerror = (#{options[:on_error]});
-              if (on_error) {
+              if (onerror) {
                 onerror(d.type, d.text);                
               }              
   					}
